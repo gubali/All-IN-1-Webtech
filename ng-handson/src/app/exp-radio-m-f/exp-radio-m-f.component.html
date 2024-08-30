@@ -1,0 +1,10 @@
+@for (item of picByGender; track $index) {
+<div class="container">
+  <input type="radio" name="group" (click)="getSelectedPic(item)" />
+  {{ item.gender }}
+</div>
+
+}
+<!-- @if(!selectedPic==null){ -->
+<img src="{{ selectedPic }}" />
+<!-- } -->

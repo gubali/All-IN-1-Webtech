@@ -1,0 +1,31 @@
+<div class="container">
+  <h3>Logic of checkboc check</h3>
+  <div class="form-check">
+    <input
+      class="form-check-input"
+      type="checkbox"
+      value=""
+      id="allCheckbox"
+      [(ngModel)]="masterCheckList"
+      (change)="checkUncheclAll()"
+    />
+    <label class="form-check-label" for="flexCheckDefault">
+      Select/Unselect all
+    </label>
+  </div>
+  @for(items of selectedCheckList; track items) {
+  <div class="form-check">
+    <input
+      class="form-check-input"
+      type="checkbox"
+      value="{{ items.name }}"
+      id="id-{{ items.name }}"
+      [(ngModel)]="items.isSelected"
+      (change)="isAllSelected()"
+    />
+    <label class="form-check-label" for="flexCheckDefault">
+      {{ items.name }}
+    </label>
+  </div>
+  }
+</div>

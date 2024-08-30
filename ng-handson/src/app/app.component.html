@@ -1,0 +1,26 @@
+<!-- <app-nested-circle-screen></app-nested-circle-screen> -->
+<div class="container">
+  <h3>==========Signal Example==============</h3>
+  @if(isActive) {
+  {{ title() }}
+  }
+  <button (click)="btnClick()">Click</button>
+  <ul>
+    @for (ingredient of ingredientList; track ingredient.name) {
+    <li>{{ ingredient.quantity }} - {{ ingredient.name }}</li>
+    }
+  </ul>
+
+  <h2>API call</h2>
+  <br />
+  <app-exp-http-request></app-exp-http-request>
+  <app-check-box-checked></app-check-box-checked>
+  <h2></h2>
+  <app-exp-radio-m-f></app-exp-radio-m-f>
+  <h3>Example of Subject Behavior</h3>
+  <div class="card card-body bg-light">
+    <app-rxjs-example></app-rxjs-example>
+    <app-update-quote></app-update-quote>
+    <app-display-quote></app-display-quote>
+  </div>
+</div>
