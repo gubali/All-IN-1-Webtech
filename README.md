@@ -27,7 +27,7 @@ export class AuthGuard implements CanActivate {
   }
 }
 
-# Auth service
+# Auth service  https://www.youtube.com/watch?v=ibn2yAomxp8&ab_channel=TechnicalBabaji
 import { Observable, of, throwError } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
