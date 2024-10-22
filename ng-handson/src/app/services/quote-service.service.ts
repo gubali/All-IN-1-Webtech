@@ -7,7 +7,8 @@ export class QuoteServiceService {
   constructor() {}
   quote = new BehaviorSubject('Example of BehaviorSubject:: Welcome');
   currentQuote = this.quote.asObservable();
-  updateQuote(newQuote: string) {
+  updateQuote(newQuote: any) {
+    console.log('im quote service', newQuote);
     this.quote.next(newQuote);
   }
 }

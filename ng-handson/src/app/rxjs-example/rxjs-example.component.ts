@@ -17,7 +17,7 @@ export class RxjsExampleComponent implements OnInit {
     private quoteService: QuoteServiceService
   ) {}
   ngOnInit(): void {
-    this.messageService.message$.subscribe(() => {});
+    //this.messageService.message$.subscribe(() => {});
     this.quoteService.currentQuote.subscribe(
       (quote) => (this.currentQuote = quote)
     );

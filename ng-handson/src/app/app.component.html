@@ -1,6 +1,9 @@
+<app-header></app-header>
+
 <!-- <app-nested-circle-screen></app-nested-circle-screen> -->
 <div class="container">
-  <h3>==========Signal Example==============</h3>
+  <router-outlet></router-outlet>
+  <h3>==========$$ignal Example$$==============</h3>
   @if(isActive) {
   {{ title() }}
   }
@@ -10,8 +13,10 @@
     <li>{{ ingredient.quantity }} - {{ ingredient.name }}</li>
     }
   </ul>
-
+  @if (apiHeaderFlag) {
   <h2>API call</h2>
+  }
+  <button class="btn btn-primary" (click)="onClick()">Show Api Header</button>
   <br />
   <app-exp-http-request></app-exp-http-request>
   <app-check-box-checked></app-check-box-checked>
@@ -23,4 +28,14 @@
     <app-update-quote></app-update-quote>
     <app-display-quote></app-display-quote>
   </div>
+  <h3>Form Implementation</h3>
+  <app-template-driven-form></app-template-driven-form>
+
+  <h3>===================Signal example==================</h3>
+  <app-signal-component></app-signal-component>
+
+  <h3>=================Text box auto calculation===============</h3>
+  <app-textbox-calculation></app-textbox-calculation>
+  <h3>=====================Chart configuration======================</h3>
+  <app-chart-component></app-chart-component>
 </div>

@@ -62,7 +62,7 @@
       <p>No posts available!</p>
       } -->
       <!-- @if(getLoadData.length > 1){ -->
-
+      sss
       <ul class="list-group">
         @for (elem of getLoadData; track elem) {
         <li class="list-group-item">
@@ -77,10 +77,20 @@
       <!-- } -->
       <br />
     </div>
-    @if(isLoading) {
+    <!-- @if(isLoading) {
     <div class="spinner-border text-danger" role="status">
       <span class="sr-only"></span>
     </div>
-    }
+    } -->
   </div>
+  {{ getLoadData }}
+  <h3>
+    Pass data from exp-http componennt to chart.js using signal on button clcik
+  </h3>
+  <div style="border: 3px dotted rebeccapurple; padding: 15px">
+    <button (click)="pushDataToSignal()" class="btn btn-danger">
+      Push data to signal service
+    </button>
+  </div>
+  <!-- <app-chart-component [childMessage]="parentMessage"></app-chart-component> -->
 </div>
