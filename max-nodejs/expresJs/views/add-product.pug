@@ -1,0 +1,9 @@
+extends layout/master-layout.pug
+block content
+    main
+      form(action='/add-product' method='POST')
+         input.form-control(type='text' name='title')
+         button.btn.btn-primary(type='submit') Submitt
+
+
+    

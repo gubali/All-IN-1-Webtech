@@ -1,22 +1,22 @@
 const express = require("express");
+const os = require("os");
 const path = require("path");
 const router = express.Router();
 const rootDirectory = require("../utils/path");
 const adminData = require("./admin");
 const shopData = [];
+console.log("CPU architecture: " + os.cpus().length);
 router.get("/", (req, res, next) => {
-  // if (adminData.products.length !== 0) {
-  //   console.log(
-  //     "admin data to shop:",
-  //     adminData.products.map((obj) => obj.enterKey)
-  //   );
-  // }
   shopData.push({ shopKey: "test shop data" });
-  const products = adminData.products.enterKey;
-  // res.sendFile(path.join(rootDirectory, "views", "shop.html"));
-  res.render("shop", { prods: products, docTitle: "Shop the product" });
+  const products = adminData.products;
+  console.log("asif", products);
+  res.render("shop", {
+    prods: products,
+    pageTitle: "Shop",
+    path: "/",
+    activeShop: true,
+    productCss: true,
+    hasProduct: products.length > 0,
+  });
 });
-// exports.routes = router;
 module.exports = router;
-// exports.routes = router;
-exports.shopData = shopData;
