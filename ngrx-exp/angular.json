@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "rxjs-example": {
+    "ngrx-exp": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/rxjs-example",
+            "outputPath": "dist/ngrx-exp",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -27,14 +27,9 @@
               }
             ],
             "styles": [
-              "src/styles.css",
-              "node_modules/@ng-select/ng-select/themes/default.theme.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "src/styles.css"
             ],
-            "scripts": [
-              "node_modules/@popperjs/core/dist/umd/popper.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -64,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "rxjs-example:build:production"
+              "buildTarget": "ngrx-exp:build:production"
             },
             "development": {
-              "buildTarget": "rxjs-example:build:development"
+              "buildTarget": "ngrx-exp:build:development"
             }
           },
           "defaultConfiguration": "development"

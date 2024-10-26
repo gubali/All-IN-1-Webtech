@@ -12,6 +12,7 @@ import { RouterOutlet } from '@angular/router';
 import { ReactiveFormExpComponent } from './reactive-form-exp/reactive-form-exp.component';
 
 import { CommonModule } from '@angular/common';
+import { HeaderComponent } from './header/header.component';
 // interface SelectItem {
 //   id: number;
 //   name: string;
@@ -26,6 +27,7 @@ import { CommonModule } from '@angular/common';
     CommonModule,
     FormsModule,
     NgSelectModule,
+    HeaderComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

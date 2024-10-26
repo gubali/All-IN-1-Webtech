@@ -1,5 +1,9 @@
-<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-  <!-- <ng-select
+<app-header></app-header>
+<div class="container mt-3">
+  <router-outlet></router-outlet>
+</div>
+<!-- <form [formGroup]="myForm" (ngSubmit)="onSubmit()"> -->
+<!-- <ng-select
     [items]="people"
     [(ngModel)]="selectedItems"
     [multiple]="true"
@@ -60,7 +64,7 @@
       </div>
     </ng-template>
   </ng-select> -->
-  <button type="submit">Click</button>
+<!-- <button type="submit">Click</button>
   <div>
     <ng-select
       [items]="list"
@@ -127,14 +131,7 @@
 
 <br />
 list{{ selectedItems }}
-<!-- Display selected items -->
-<!-- <div *ngIf="selectedItems.length > 0">
-  <h3>Selected Items:</h3>
-  <ul>
-    <li *ngFor="let item of selectedItems">{{ item.name }}</li>
-  </ul>
-</div> -->
 <div style="padding: 3%; border: 3px dotted red; margin: 0">
   <h3 style="margin: 0">Onservable Workshop Angular training Workshop</h3>
   <app-reactive-form-exp></app-reactive-form-exp>
-</div>
+</div> -->
