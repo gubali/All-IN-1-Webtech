@@ -1,0 +1,11 @@
+<%- include('layout/includes/head.ejs') %>
+  </head>
+  <body>
+    <%- include('layout/includes/navigation.ejs') %>
+<main class="add-product container">
+  <form action="/add-product" method="POST">
+    <input type="text" class="form-control" name="title" />
+    <button type="submit" class="btn btn-primary">Submitt</button>
+  </form>
+</main>
+  </body>
