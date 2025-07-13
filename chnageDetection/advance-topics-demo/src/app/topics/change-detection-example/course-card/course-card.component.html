@@ -1,0 +1,47 @@
+<div class="card" style="width: 18rem">
+  <h4 style="padding: 15px 5px">
+    {{ course.description }}
+    <!-- <ng-container *ngIf="latestDescription">
+        {{ latestDescription }}
+      </ng-container> -->
+  </h4>
+
+  <!-- <ng-template #showCourseDescription>
+      {{ course.description }}
+    </ng-template> -->
+  <ng-template #blankImage> no image </ng-template>
+  <ng-content *ngIf="course.iconUrl; else blankImage"></ng-content>
+  <div
+    class="card-body"
+    [ngClass]="{ isCardHighlighted: course.category === 'INTERMEDIATE' }"
+  >
+    {{ cardIndex }}
+    <!-- <h5 class="card-title">{{ course.description }}</h5> -->
+    Edit title:
+    <input
+      #courseTitle
+      [value]="course.description"
+      (keyup)="onTitleChnaged(courseTitle.value)"
+    />
+    <p class="card-text">{{ course.longDescription }}</p>
+    @switch (course.category) 
+    { 
+      @case ("INTERMEDIATE")
+     {
+    <div class="card-text bg-info text-white p-2">Intermediate</div>
+    } 
+    @case ("BEGINNER") {
+    <div class="card-text bg-success text-white p-2">Beginner</div>
+    } 
+    @case ("ADVANCED") {
+      <div class="card-text bg-warning text-white p-2">ADVANCED</div>
+      } 
+  }
+    <button class="btn btn-primary" (click)="onCourseViewd(courseTitle.value)">
+      Edit Now
+    </button>
+    <button class="btn btn-danger" (click)="deletCourse(course.id)">
+      Delete
+    </button>
+  </div>
+</div>

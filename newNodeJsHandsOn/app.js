@@ -2,8 +2,11 @@ const path = require('path');
 
 const express = require('express');
 const bodyParser = require('body-parser');
+
+const errorController = require('./controllers/error');
+
 const app = express();
-const errorController = require('./controllers/404');
+
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 

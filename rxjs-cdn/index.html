@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/rxjs@^7/dist/bundles/rxjs.umd.min.js"></script>
+  </head>
+  <body>
+    <script>
+      rxjs
+        .of(1, 2, 3)
+        .pipe(rxjs.map((v) => v * v))
+        .subscribe((x) => console.log("x value is ", x));
+
+      const myCourse$ = rxjs.from(["Angular", "React", "Java"]);
+      function getData(data) {
+        return rxjs.of(data + " Video uploaded!").pipe(rxjs.delay(1000));
+      }
+      //console.log("========map with nested subscribe method");
+      //myCourse$.pipe(rxjs.map(data=> getData(data))).subscribe(res=> res.subscribe(console.log));
+
+      //console.log("========map with no nested subscribe");
+      //myCourse$.pipe(rxjs.map(data=> getData(data)),rxjs.switchAll()).subscribe(console.log);  // swith to latwst inner obs$ value
+
+      //console.log("========switchMap============");
+      //myCourse$.pipe(rxjs.switchMap(data=> getData(data))).subscribe(console.log);
+
+      console.log("========mrge map=============");
+      myCourse$
+        .pipe(rxjs.mergeMap((data) => getData(data)))
+        .subscribe(console.log);
+
+      console.log("============= exhaustMap - do not distrub");
+      const body = document.body;
+      const dynamicBtn = document.createElement("button");
+      const fakeApi$ = rxjs.interval(1000).pipe(rxjs.take(3));
+      dynamicBtn.innerText = "Click Me!";
+      const buttonClick$ = rxjs.fromEvent(dynamicBtn, "click");
+      buttonClick$
+        .pipe(
+          rxjs.exhaustMap(() => rxjs.interval(1000).pipe(rxjs.take(3))) // Ignores clicks while active
+        )
+        .subscribe(console.log);
+      //   buttonClick$
+      //     .pipe(exhaustMap(() => interval(1000).pipe(take(3))))
+      //     .subscribe(console.log);
+      body.appendChild(dynamicBtn);
+    </script>
+  </body>
+</html>

@@ -25,4 +25,8 @@ const doSomething = ():void=>{
     console.log('dsd');
 }
 
-//unknoen
+console.log("==============Testing===========")
+
+const flatArr = [1,[2,3],4,[5,6]];
+const flatArr1 = flatArr.flat(Infinity);
+console.log(flatArr1);

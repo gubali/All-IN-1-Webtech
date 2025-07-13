@@ -6,6 +6,7 @@ import "./components/Header.css";
 import TabButton from "./components/TabButton.jsx";
 import { Fragment, useState } from "react";
 import Example from "./components/Example.jsx";
+import Slider from "./components/Slider.jsx";
 function App() {
   // palindrome string
   function isPalindrome(str) {
@@ -15,7 +16,7 @@ function App() {
     }
     return revStr == str ? true : false;
   }
-  console.log(`is Palindrome` + isPalindrome("racecar"));
+  console.log(isPalindrome("racecars"));
   return (
     <>
       <header>
@@ -24,6 +25,7 @@ function App() {
         <input type="text" className="form-control" />
       </header>
       <Header />
+      <Slider />
       <h2>Core CoreConcepts</h2>
       <CoreConcepts />
       <menu>

@@ -1,0 +1,26 @@
+<table class="table table-bordered table-striped">
+    <thead>
+        <td>Sr no</td>
+        <td>Name</td>
+        <td>Email</td>
+        <td>User Name</td>
+    </thead>
+    <tbody>
+        <!-- @for (items of userList; track $index){ --> 
+        @for (items of userList1(); track $index){  
+            <tr>
+                <td>{{ $index + 1 }}</td>
+                <td>{{ items.name }}</td>
+                <td>{{ items.email }}</td>
+                <td>{{ items.username }}</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<h2>{{name}}</h2>
+<form [formGroup]="myform" (ngSubmit)="onSubmit()">
+
+    <input type="text" [formControl]="customControl"  />
+</form>
+    
+

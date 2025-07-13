@@ -1,4 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap");
+.small-button {
+  padding: 4px 8px;
+  font-size: 12px;
+}
+.responsive-img {
+  width: 100%;
+  height: auto;
+}
 
 * {
   box-sizing: border-box;
