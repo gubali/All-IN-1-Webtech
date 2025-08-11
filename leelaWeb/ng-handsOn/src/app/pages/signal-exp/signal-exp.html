@@ -1,0 +1,33 @@
+Singal Values :: {{count()}}
+<br />
+<button class="btn btn-success" (click)="incriment()">Incriment()</button>
+<button class="btn btn-danger" (click)="descriment()">Incriment()</button>
+
+<div style="border: 1px solid red">
+  <strong>Computed Signal =>
+   - Read signal (depedency are dynamic)
+   - Can not be modify directly
+
+</strong>
+  <em> -derive from other Singal - <br />read only </em> {{doubleCount()}}
+
+  <div>
+    lazy evaluation -> does not compute value untill you actually read them.
+    <br />
+    <button (click)="getLazyEvaluation()">Lazy Evaluation</button>
+    <button (click)="pluzLazy()">Incriment</button>
+  </div>
+
+  <div><b>Memoization</b></div>
+  - cached their calculated value.
+  <div style="color: green">When to use</div>
+  <small style="color: red">
+    Data transformation: When transform or compute based on the other signals.
+  </small>
+
+  <p>******************</p>
+  foo: {{mySignal().foo}}
+<br />
+  productPrceSignal :: {{productPrceSignal()}}<br />
+  <button (click)="updateSignal()">Update Now</button>
+</div>

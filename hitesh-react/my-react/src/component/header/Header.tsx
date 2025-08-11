@@ -56,6 +56,7 @@ function Header() {
                   Currency Converter
                 </NavLink>
               </li>
+              
               <li>
                 <NavLink
                   to="/user/1"
@@ -66,6 +67,18 @@ function Header() {
                   }
                 >
                   User
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="todoList"
+                  className={({ isActive }) =>
+                    `block py-2 pr-4 pl-3 hover:text-orange-700 ${
+                      isActive ? "text-orange-700" : "text-gray-700"
+                    }`
+                  }
+                >
+                  ToDo List
                 </NavLink>
               </li>
             </ul>

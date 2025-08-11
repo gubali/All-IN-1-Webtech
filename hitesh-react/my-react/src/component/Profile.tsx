@@ -18,10 +18,11 @@ type Props = {
 function Profile({ props, btnText }: Props) {
      console.log("Profile component props:", props);  
   return (
-    <div className="flex flex-wrap justify-center gap-6 px-4 py-6">
+    <div className="flex flex-wrap justify-center gap-6 px-4 py-6 my-box">
       {props && props.length > 0 ? (
         props.map((items, index) => (
           <div key={index} className="w-full sm:w-1/2 md:w-1/3">
+            asif
             <div className="bg-white shadow-xl rounded-lg text-gray-900 overflow-hidden">
               <div className="rounded-t-lg h-32 overflow-hidden">
                 <img
@@ -38,8 +39,8 @@ function Profile({ props, btnText }: Props) {
                 />
               </div>
               <div className="text-center mt-2">
-                <h2 className="font-semibold">{items.name}</h2>
-                <p className="text-gray-500">{items.designation}</p>
+                <h2 className="font-semibold">AA{items.name}</h2>
+                <p className="text-gray-500">{items.designation} --</p>
               </div>
               <ul className="py-4 mt-2 text-gray-700 flex items-center justify-around">
                 <li className="flex flex-col items-center justify-around">

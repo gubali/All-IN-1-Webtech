@@ -12,7 +12,8 @@ import Layout from "./component/Layout";
 import Home from "./Home/Home";
 import About from "./About/About";
 import Currency from "./component/currency/Currency";
-import User, {gitHUbInfoLoader} from "./component/user/User";
+import User, { gitHUbInfoLoader } from "./component/user/User";
+import ToDoList from "./component/todo/Todo";
 // const router = createBrowserRouter([
 //   {
 //     path: "/",
@@ -31,6 +32,7 @@ const router = createBrowserRouter(
       <Route path="" element={<Home />} />
       <Route path="about" element={<About />} />
       <Route path="currencyConverter" element={<Currency />} />
+      <Route path="todoList" element={<ToDoList />} />
       <Route path="user/:id" element={<User />} loader={gitHUbInfoLoader} />
     </Route>
   )

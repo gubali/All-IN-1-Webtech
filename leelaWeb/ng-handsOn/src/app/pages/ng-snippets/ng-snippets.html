@@ -1,0 +1,26 @@
+<div class="autocomplete-wrapper">
+  <h2>Auto Complete</h2>
+  <input
+    type="text"
+    [(ngModel)]="autoComlete"
+    (input)="getFruitsSugetion()"
+    style="width: 100%"
+  />
+  <ul *ngIf="showSuggestions &&filterList.length>0" class="autocomplete-list">
+    <li *ngFor="let item of filterList" (click)="fnAutoComlete(item)">
+      {{item}}
+    </li>
+  </ul>
+</div>
+
+<div class="todoApp" style="margin-top: 2%">
+  <h2>Todo - App</h2>
+</div>
+<input type="text" [(ngModel)]="searchKey1" (input)="getCountrySuggestion()" />
+
+<ul>
+  @for (item of suggestions; track item) {
+    <li (click)="selectedItems(item)">{{ item }}</li>
+  }
+</ul>
+

@@ -46,7 +46,7 @@ function User() {
         {id ? `User id is ${id}` : "No user id foind!"}
       </p> */}
       {userData && (
-        <div className="max-w-2xl mx-auto mt-10 bg-white rounded-xl shadow-xl overflow-hidden border border-gray-200">
+        <div className="max-w-2xl mx-auto mt-10 bg-white rounded-xl shadow-xl overflow-hidden border border-gray-200 my-box">
           <div className="flex flex-col md:flex-row items-center p-8 space-y-6 md:space-y-0 md:space-x-8">
             {/* Avatar */}
             <img
@@ -57,7 +57,7 @@ function User() {
 
             {/* Info */}
             <div className="text-center md:text-left flex-1">
-              <h2 className="text-3xl font-bold text-gray-800">
+              <h2 className="text-3xl font-bold text-gray-800 my-box">
                 {userData.name}
               </h2>
               <p className="text-gray-600 text-lg mt-2">

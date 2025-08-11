@@ -25,11 +25,13 @@ function FilterItems() {
         value={searchText}
         onChange={handleChange}
       />
-      {filterFruits && filterFruits.length > 0 ? (
-        filterFruits.map((fruits, index) => <p key={index}>{fruits}</p>)
-      ) : (
-        <p style={{ color: "red" }}>No fruits found</p>
-      )}
+      {
+
+      filterFruits && filterFruits.length > 0 ? (filterFruits.map((fruits, index) => <p key={index}>{fruits}</p>)) 
+      :
+      (<p style={{ color: "red" }}>No fruits found</p>)
+      
+      }
     </>
   );
 }

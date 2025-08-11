@@ -1,0 +1,79 @@
+<h3>Fork join - 3 API Call</h3>
+<div class="row">
+  <div class="col-lg-4">
+    <h3 style="color: red; margin: 2% 0; text-align: center">User List</h3>
+    <div class="user">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search by user..."
+        [(ngModel)]="queryName"
+        (ngModelChange)="filterDataByUserName()"
+      />
+      <ul style="margin-top: 20px">
+        @if(filterUserByName.length > 0){ @for(items of filterUserByName; track
+        items.id){
+        <li style="margin-bottom: 5px">
+          <strong>Name: </strong> {{items.name}}<br />
+          <strong>Email: </strong> {{items.email}}<br />
+          <strong>Status: </strong>
+          <span
+            [ngStyle]="{color: items.status ==='inactive' ? 'red': 'green'}"
+          >
+            {{items.status}}
+          </span>
+          <br />
+        </li>
+        } } @else {
+        <p style="color: red">No data found!</p>
+        }
+      </ul>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <h3 style="color: green; margin: 2% 0; text-align: center">Post</h3>
+    <div class="user">
+      <ul>
+        @for(items of posts; track items.id){
+        <li style="margin-bottom: 5px">
+          <h4>{{items.title}}</h4>
+          <small> {{items.body}} </small>
+          <br />
+        </li>
+        }
+      </ul>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <h3 style="color: blue; margin: 2% 0; text-align: center">Comments</h3>
+    <div class="user">
+      <ul>
+        @for(items of comments; track items.id){
+        <li style="margin-bottom: 5px">
+          <h4>{{items.name}}</h4>
+          <small> {{items.body}} </small><br />
+          <strong>Email: </strong> {{items.email}}<br />
+          <br />
+        </li>
+        }
+      </ul>
+    </div>
+  </div>
+</div>
+
+<h2>CombineLatest - 3 API Call</h2>
+<div class="" style="border: 2px solid green">
+  @if(combineLatest$.length > 0 ){ @for(items of combineLatest$; track
+  items.name){
+  <p>
+    <strong>Name:</strong>{{items.name}}
+    <br />
+    <strong>Title: </strong>{{items.title}}
+    <br />
+    <strong>Post body:</strong> {{items.body}}
+  </p>
+  } }
+
+  
+<h2>Concat - 2 API Call</h2>
+</div>
