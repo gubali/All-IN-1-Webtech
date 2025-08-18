@@ -1,28 +1,29 @@
 const http = require('http');
-const fs = require('fs')
+const fs = require('fs');
 const server = http.createServer(function (req, res) {
-    // console.log(req);
     const path = req.url;
-    const method = equal.method;
+    const method = req.method;
+    const log = `\n[${new Date().toLocaleString()}] : ${method} ${path}`;
+    fs.appendFile('log.txt', `${log}`, 'utf-8', () => {
+    });
     switch (method) {
         case 'GET': {
             switch (path) {
                 case '/':
-                    res.writeHead(200).end('Hello server!!')
+                    res.writeHead(200).end('Hello server!!');
+                    return;
             }
         }
+            break
         case 'POST': {
-
+            switch (path) {
+                case '/tweet':
+                    return res.writeHead(201).end('tweet created');
+            }
         }
-
+            break
     }
-    // switch (path) {
-    //     case '/':
-    //         res.writeHead(200).end('Hello server!!')
-    //     case '/contact':
-    //         const email = 'sasasas@gmail.com.??'
-    //         res.writeHead(200).end(`you email is ${email}`)
-    // }
+    return res.writeHead(400).end('you lost');
 });
 
 server.listen('9000', function () {

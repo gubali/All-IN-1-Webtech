@@ -1,0 +1,9 @@
+<form [formGroup]="myForm" (ngSubmit)="formSubmitt()">
+  <input type="text" formControlName="name" />
+  <input type="text" formControlName="email" />
+  <input type="radio" formControlName="gender" value="male" />Male
+  <input type="radio" formControlName="gender" value="female" />Female
+  <button type="submit">Submit</button>
+</form>
+<button (click)="setFormValues()">Set Values()</button>
+<button (click)="patchFormValues()">Patch Values()</button>

@@ -20,7 +20,17 @@
 
 <ul>
   @for (item of suggestions; track item) {
-    <li (click)="selectedItems(item)">{{ item }}</li>
+  <li (click)="selectedItems(item)">{{ item }}</li>
   }
 </ul>
 
+<h1>Welcome:: {{userName}}</h1>
+<ng-content></ng-content>
+<h3>ng temlate example: conditinal rendering</h3>
+<button (click)="toggle()">{{show ? 'Hide': 'Show' }} message</button>
+<ng-template #ShowItems>
+  <p>SHow element from ng-template</p>
+</ng-template>
+@if (show) {
+<ng-container [ngTemplateOutlet]="ShowItems"></ng-container>
+}

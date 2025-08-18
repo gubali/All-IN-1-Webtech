@@ -1,8 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ApiService } from '../../core/services/country/api-service';
-
+interface Iuser {
+  name: string;
+  age: number;
+}
 @Component({
   selector: 'app-ng-snippets',
   imports: [FormsModule, CommonModule],
@@ -11,6 +14,9 @@ import { ApiService } from '../../core/services/country/api-service';
   styleUrl: './ng-snippets.css',
 })
 export class NgSnippets implements OnInit {
+  // basic snipppet
+  @Input() userName: string = '';
+  show: boolean = false;
   autoComlete: string = '';
   showSuggestions: boolean = false;
   fruits: string[] = [
@@ -55,9 +61,11 @@ export class NgSnippets implements OnInit {
       this.suggestions = data;
     });
   }
-  selectedItems(item:string) {
+  selectedItems(item: string) {
     this.searchKey1 = item;
     this.suggestions = [];
-
+  }
+  toggle() {
+    this.show = !this.show;
   }
 }

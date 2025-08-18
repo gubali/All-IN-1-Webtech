@@ -8,6 +8,7 @@ import { Getuser } from './app/core/services/resolver/getuser';
 import { SignalExp } from './app/pages/signal-exp/signal-exp';
 import { RxjsOperator } from './app/pages/rxjs-operator/rxjs-operator';
 import { NgSnippets } from './app/pages/ng-snippets/ng-snippets';
+import { FormExample } from './app/pages/form-example/form-example';
 const routeConfig: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: Login },
@@ -30,6 +31,7 @@ const routeConfig: Routes = [
       },
       { path: 'rxjs', component: RxjsOperator },
        { path: 'snippet', component: NgSnippets },
+        { path: 'ngform', component: FormExample },
     ],
   },
   { path: '**', redirectTo: 'login' },
