@@ -1,0 +1,18 @@
+<input
+  type="text"
+  class="form-control"
+  [(ngModel)]="txtVal"
+  placeholder="Custom counter value..."
+/>
+<button class="btn btn-success" (click)="onAdd()" style="margin-top: 5px">
+  Set Counter Value
+</button>
+<br />
+<div style="border: 1px dotted red; padding: 15px; margin: 20px 0">
+  <strong>Get inital store of text-static </strong>
+  <div>
+    Text Value from Store:
+    <small style="color: red">{{ userTextFromStore$ | async }}</small>
+  </div>
+  <button (click)="changeText()" class="btn btn-primary">Update Now</button>
+</div>

@@ -1,5 +1,19 @@
-Counter NgRx: {{ counter }}
-
-<button class="btn btn-primary" (click)="onIncrement()">Incriment</button>
-<button class="btn btn-warning" (click)="onDecrement()">deccriment</button>
-<button class="btn btn-danger" (click)="onReset()">Reset</button>
+<!-- Counter NgRx: {{ counter }} -->
+<app-custom-counter-input></app-custom-counter-input>
+<h3>
+  Counter NgRx with async pipe
+  <strong>
+    <!-- {{(counter$ | async)?.counter}} -->
+    <!---async pipe-->
+    {{counter}}
+  </strong>
+</h3>
+<div style="padding: 5px">
+  <button class="btn btn-primary" (click)="onIncrement()" style="margin: 5px">
+    Incriment
+  </button>
+  <button class="btn btn-warning" (click)="onDecrement()" style="margin: 5px">
+    deccriment
+  </button>
+  <button class="btn btn-danger" (click)="onReset()">Reset</button>
+</div>
