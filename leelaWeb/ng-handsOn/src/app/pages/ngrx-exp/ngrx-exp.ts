@@ -1,4 +1,11 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import {
+  Component,
+  ComponentRef,
+  OnDestroy,
+  OnInit,
+  ViewChild,
+  ViewContainerRef,
+} from '@angular/core';
 import { Store } from '@ngrx/store';
 import {
   decrement,
@@ -10,6 +17,8 @@ import { Observable, Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { CustomCounterInput } from '../../custom-counter-input/custom-counter-input';
 import { getCounter } from '../../store/selectors/counter.selectors';
+import { AppState } from '../../app-store/app.store';
+import { PostData } from '../post/post-list/post-list';
 @Component({
   selector: 'app-ngrx-exp',
   imports: [CommonModule, CustomCounterInput],
@@ -17,11 +26,15 @@ import { getCounter } from '../../store/selectors/counter.selectors';
   templateUrl: './ngrx-exp.html',
   styleUrl: './ngrx-exp.css',
 })
-export class NgrxExp implements OnInit {
+export class NgrxExp implements OnInit, OnDestroy {
   counter!: number;
   counterSubcription!: Subscription; // method 1
   counter$!: Observable<ICounterState>;
-  constructor(private store: Store<{ counter: ICounterState }>) {}
+  //dynamic component related code
+  @ViewChild('postDataTemplate', { read: ViewContainerRef, static: true })
+  container!: ViewContainerRef;
+  private componentRef!: ComponentRef<PostData>;
+  constructor(private store: Store<AppState>) {}
   ngOnInit(): void {
     this.counterSubcription = this.store.select(getCounter).subscribe((res) => {
       console.log('Counter Value from Store:', res);
@@ -29,6 +42,7 @@ export class NgrxExp implements OnInit {
     });
     // this.counter$ = this.store.select(getCounter);
   }
+
   onIncrement(): void {
     this.store.dispatch(incriment());
   }
@@ -44,4 +58,13 @@ export class NgrxExp implements OnInit {
   //     this.counterSubcription.unsubscribe();
   //   }
   // }
+  loadDynamicComponent() {
+    this.container.clear();
+    this.componentRef = this.container.createComponent(PostData);
+  }
+  ngOnDestroy(): void {
+    if (this.componentRef) {
+      this.componentRef.destroy();
+    }
+  }
 }

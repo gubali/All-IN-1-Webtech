@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PostData } from './post-data';
+import { PostData } from './post-list';
 
 describe('PostData', () => {
   let component: PostData;
@@ -8,9 +8,8 @@ describe('PostData', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PostData]
-    })
-    .compileComponents();
+      imports: [PostData],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(PostData);
     component = fixture.componentInstance;

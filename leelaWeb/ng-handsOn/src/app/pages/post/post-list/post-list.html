@@ -1,0 +1,18 @@
+<div class="table-responsive">
+  <table class="table table-primary">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Title</th>
+        <th scope="col">Body</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let post of  postData$ | async">
+        <td scope="row">{{post.id}}</td>
+        <td>{{post.title}}</td>
+        <td>{{post.body}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
