@@ -1,0 +1,29 @@
+<!-- Counter NgRx: {{ counter }} -->
+<app-custom-counter-input></app-custom-counter-input>
+<h3>
+  Counter NgRx with async pipe
+  <strong>
+    <!-- {{(counter$ | async)?.counter}} -->
+    <!---async pipe-->
+    {{counter}}
+  </strong>
+</h3>
+<div style="padding: 5px">
+  <button class="btn btn-primary" (click)="onIncrement()" style="margin: 5px">
+    Incriment
+  </button>
+  <button class="btn btn-warning" (click)="onDecrement()" style="margin: 5px">
+    deccriment
+  </button>
+  <button class="btn btn-danger" (click)="onReset()">Reset</button>
+</div>
+
+<h3 style="margin: 15px 0; color: goldenrod">
+  Get data from store and show on UI
+</h3>
+<div>
+  <ng-template #postDataTemplate> </ng-template>
+  <button class="btn btn-success" (click)="loadDynamicComponent()">
+    {{isDynamicComponentLoaded ? 'Unload' : 'Load'}} Post Data Component
+  </button>
+</div>

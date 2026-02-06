@@ -1,0 +1,25 @@
+{
+    "Sales": {
+        "lebel": [
+            "HP",
+            "Dell",
+            "Wipro",
+            "HCL",
+            "TCS"
+        ],
+        "data": [
+            500,
+            400,
+            700,
+            900,
+            100
+        ],
+        "bgcolor": [
+            "purple",
+            "green",
+            "black",
+            "blue",
+            "#eee"
+        ]
+    }
+}

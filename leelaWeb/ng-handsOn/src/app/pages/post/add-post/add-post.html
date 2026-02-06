@@ -1,0 +1,47 @@
+<div
+  style="
+    margin: 15px 0;
+    background-color: #c778ad;
+    padding: 15px;
+    color: white;
+    border-radius: 5px;
+  "
+>
+  <h2>Add New Post</h2>
+  <form [formGroup]="form">
+    <div class="mb-3">
+      <label for="title" class="form-label">Post Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        formControlName="title"
+      />
+      <div *ngIf="form.get('title')?.touched && !form.get('title')?.valid">
+        <span *ngIf="form.get('title')?.errors?.['required']" style="color: red"
+          >Title is required.</span
+        >
+        <span
+          *ngIf="form.get('title')?.errors?.['minlength']"
+          style="color: yellow"
+          >Title should be at least 5 characters long.
+        </span>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="body" class="form-label">Post Body</label>
+      <textarea
+        class="form-control"
+        id="body"
+        rows="3"
+        formControlName="body"
+      ></textarea>
+    </div>
+    <input
+      type="submit"
+      (click)="addPost()"
+      class="btn btn-primary"
+      [disabled]="form.invalid"
+    />
+  </form>
+</div>

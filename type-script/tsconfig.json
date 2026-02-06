@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES2015",          // Output JS version
+    "module": "commonjs",        // Module system
+    "lib": ["ES2015", "DOM"],    // Include ES2015 APIs like Symbol
+    "strict": true,              // Enable all strict type checks
+    "esModuleInterop": true,     // For importing CommonJS modules
+    "outDir": "./dist",          // Output folder for compiled JS
+    "rootDir": "./",             // Root folder for TS source
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["*.ts"],           // Which TS files to compile
+  "exclude": ["node_modules"]    // Exclude dependencies
+}

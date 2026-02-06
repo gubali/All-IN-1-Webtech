@@ -1,0 +1,102 @@
+<form
+  style="margin-top: 10px"
+  [formGroup]="userForm"
+  (ngSubmit)="registrList()"
+>
+  <input
+    type="text"
+    formControlName="firstName"
+    class="form-control"
+    placeholder="First Name"
+  />
+  <input
+    type="text"
+    formControlName="lastName"
+    class="form-control"
+    placeholder="Last Name"
+  />
+  <input
+    type="text"
+    formControlName="mobileNumber"
+    class="form-control"
+    placeholder="Mobile Number"
+  /><br />
+
+  <div>
+    <label>Gender:</label>
+    <label>
+      <input type="radio" formControlName="gender" value="Male" name="gender" />
+      Male
+    </label>
+    <label>
+      <input
+        type="radio"
+        formControlName="gender"
+        value="Female"
+        name="gender"
+      />
+      Female
+    </label>
+  </div>
+
+  <div>
+    <label>
+      <input type="checkbox" formControlName="bTech" />
+      B.Tech
+    </label>
+  </div>
+
+  <br />
+  <input
+    type="submit"
+    class="btn btn-primary"
+    [value]="editIndex() !=null ? 'Update' :'Add Item'"
+  />
+</form>
+
+<hr />
+
+<!-- ✅ Using Angular v17+ @for syntax (optional, recommended in v20) -->
+<div *ngIf="toDoList().length > 0; else noData" class="table-responsive">
+  <table class="table table-primary">
+    <thead>
+      <tr>
+        <th scope="col">Id#</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Mobile No</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Course Type</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (item of toDoList(); track $index) {
+      <tr>
+        <td>{{ $index + 1 }}</td>
+        <td>{{ item.firstName }}</td>
+        <td>{{ item.lastName }}</td>
+        <td>{{ item.mobileNumber }}</td>
+        <td>{{ item.gender }}</td>
+        <td>{{ item.bTech }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="editItem($index)">
+            Edit
+          </button>
+          <button class="btn btn-danger" (click)="deletItemById($index)">
+            Delete
+          </button>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>
+<button (click)="callMethodOfXComponent()" class="btn btn-success">
+  Call Method of Child
+</button>
+<ng-template #noData>
+  <p>No data found!</p>
+</ng-template>
+<!---ViewChild example-->
+<!-- <app-employee style="display: none"></app-employee> -->

@@ -1,0 +1,8 @@
+Parent to child example<br /><br />
+<app-counter-outputs [counter]="counter"></app-counter-outputs>
+<br /><br />
+<app-counter-buttons
+  (increment)="onIncriment()"
+  (decrement)="onDecriment()"
+  (reset)="onReset()"
+></app-counter-buttons>

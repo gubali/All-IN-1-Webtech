@@ -1,0 +1,11 @@
+<!-- <ul>
+  @for (item of childRcvr; track item.id) {
+  <li>{{ item.id + 1 }} - {{ item.name }}</li>
+  }
+</ul> -->
+<cdk-virtual-scroll-viewport itemSize="15" class="viewport">
+    <div *cdkVirtualFor="let item of childRcvr" class="item">
+        {{ item.id + 1 }} - {{ item.name }}
+    </div>
+  </cdk-virtual-scroll-viewport>
+<button (click)="triggerUnrelatedChnage()">Click for Trigger</button>

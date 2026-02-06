@@ -1,0 +1,34 @@
+<div>
+  <div style="margin-bottom: 15px">
+    <button class="btn btn-primary" (click)="loadAddForm()">
+      {{isFormLoaded ? 'Close Form': 'Add Post'}}
+    </button>
+    <ng-template #addPostContainer> </ng-template>
+
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<div class="table-responsive">
+  <table class="table table-primary">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Title</th>
+        <th scope="col">Body</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let post of  postData$ | async">
+        <td scope="row">{{post.id}}</td>
+        <td>{{post.title}}</td>
+        <td>{{post.body}}</td>
+        <td>
+          <a href="#" class="btn btn-warning" [routerLink]="['edit', post.id]"
+            >Update</a
+          >
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

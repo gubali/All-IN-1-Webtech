@@ -1,0 +1,137 @@
+<app-header></app-header>
+<div class="container mt-3">
+  <router-outlet></router-outlet>
+</div>
+<!-- <form [formGroup]="myForm" (ngSubmit)="onSubmit()"> -->
+<!-- <ng-select
+    [items]="people"
+    [(ngModel)]="selectedItems"
+    [multiple]="true"
+    bindLabel="name"
+    placeholder="Select multiple items"
+    [closeOnSelect]="false"
+    formControlName="country"
+  >
+    <ng-template ng-header-tmp>
+      <div class="select-all">
+        <button
+          type="button"
+          (click)="selectAllItems()"
+          [disabled]="selectedItems.length === people.length"
+        >
+          Select All
+        </button>
+        <button
+          type="button"
+          (click)="clearAllItems()"
+          [disabled]="selectedItems.length === 0"
+        >
+          Clear All
+        </button>
+      </div>
+    </ng-template>
+    <ng-template
+      ng-option-tmp
+      let-item="item"
+      let-item$="item$"
+      let-index="index"
+    >
+      <input
+        id="item-{{ index }}"
+        type="checkbox"
+        [ngModel]="item$.selected"
+        [ngModelOptions]="{ standalone: true }"
+      />
+      {{ item.name }}
+    </ng-template>
+
+    <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
+      <div *ngFor="let item of items | slice : 0 : 2">
+        <div class="ng-value">
+          <span class="ng-value-label">{{ $any(item).name }}</span>
+          <span
+            class="ng-value-icon right"
+            (click)="clear(item)"
+            aria-hidden="true"
+            >×</span
+          >
+        </div>
+      </div>
+      <div *ngIf="items.length > 2">
+        <div class="ng-value">
+          <span class="ng-value-label">{{ items.length - 2 }} more...</span>
+        </div>
+      </div>
+    </ng-template>
+  </ng-select> -->
+<!-- <button type="submit">Click</button>
+  <div>
+    <ng-select
+      [items]="list"
+      [multiple]="true"
+      bindLabel="label"
+      [selectableGroup]="true"
+      [closeOnSelect]="false"
+      formControlName="listControl"
+      bindValue="value"
+      groupBy="selectedAllGroup"
+      [selectableGroup]="true"
+      [selectableGroupAsModel]="false"
+      [(ngModel)]="selectedItems"
+    >
+      <ng-template
+        ng-option-tmp
+        let-item="item"
+        let-item$="item$"
+        let-index="index"
+      >
+        <ng-template
+          ng-optgroup-tmp
+          let-item="item"
+          let-item$="item$"
+          let-index="index"
+        >
+          <input
+            id="item-{{ index }}"
+            type="checkbox"
+            [ngModel]="item$.selected"
+            [ngModelOptions]="{ standalone: true }"
+          />
+          Select All
+        </ng-template>
+        <input
+          id="item-{{ index }}"
+          type="checkbox"
+          [ngModel]="item$.selected"
+          [ngModelOptions]="{ standalone: true }"
+        />
+        {{ item.value }}
+      </ng-template>
+
+      <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
+        @for (item of items | slice: 0 : 2; track item) {
+        <div class="ng-value">
+          <span class="ng-value-label"> {{ $any(item).value }}</span>
+          <span
+            class="ng-value-icon right"
+            (click)="clear(item)"
+            aria-hidden="true"
+            >×</span
+          >
+        </div>
+        } @if (items.length > 2) {
+        <div class="ng-value">
+          <span class="ng-value-label">{{ items.length - 2 }} more...</span>
+        </div>
+        }
+      </ng-template>
+    </ng-select>
+  </div>
+</form>
+
+<br />
+list{{ selectedItems }}
+<div style="padding: 3%; border: 3px dotted red; margin: 0">
+  <h3 style="margin: 0">Onservable Workshop Angular training Workshop</h3>
+  <app-reactive-form-exp></app-reactive-form-exp>
+</div> -->

@@ -1,0 +1,13 @@
+.viewport {
+    height: 400px;
+    width: 300px;
+    border: 1px solid #ccc;
+    overflow: auto;
+  }
+  .item {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    border-bottom: 1px solid #ddd;
+  }

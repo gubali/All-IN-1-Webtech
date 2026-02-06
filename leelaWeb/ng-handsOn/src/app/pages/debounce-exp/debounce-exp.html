@@ -1,0 +1,16 @@
+<input
+  type="text"
+  placeholder="Type something..."
+  [formControl]="searchControl"
+/>
+
+<p *ngIf="loading">Loading</p>
+
+<ul>
+  <li *ngFor="let item of results">
+    {{item.title}} - {{item.discountPercentage}}
+  </li>
+</ul>
+<div *ngIf="!loading && results.length ===0 && searchControl.value">
+  No results found
+</div>

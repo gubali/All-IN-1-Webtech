@@ -1,0 +1,51 @@
+[
+  {
+    "id": "12345",
+    "title": "Apple",
+    "price": "100",
+    "imageUrl": "https://media.istockphoto.com/id/184276818/photo/red-apple.jpg?s=612x612&w=0&k=20&c=NvO-bLsG0DJ_7Ii8SSVoKLurzjmV0Qi4eGfn6nW3l5w=",
+    "description": "LOre ipsum doller amet set"
+  },
+  {
+    "id": "9999",
+    "title": "Grapes",
+    "price": "100",
+    "imageUrl": "https://naturehills.com/cdn/shop/files/abf31cd3-e95c-49e7-9c01-3dab992603fd_88b79220-2285-435d-a5ac-88aa107f9b19.jpg?v=1737044010&width=1214",
+    "description": "Tasty and sweets"
+  },
+  {
+    "title": "Orange",
+    "price": "12",
+    "imageUrl": "https://zamaorganics.com/cdn/shop/files/Untitleddesign_35_d63fc2f8-c7c4-430e-89fa-0ac1b84f7cfc_11zon.png?v=1694675707&width=1080",
+    "description": "Rich sourse of vitamin",
+    "id": 0.7693487434905062
+  },
+  {
+    "title": "good for health",
+    "price": "87",
+    "imageUrl": "https://nutritionsource.hsph.harvard.edu/wp-content/uploads/2018/08/bananas-1354785_1920.jpg",
+    "description": "awesome!",
+    "id": 0.8234205366416556
+  },
+  {
+    "title": "guava",
+    "imageUrl": "https://www.health.com/thmb/XlWTD8TZF5574DVtMEfD-XSj5Lg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Guava-15d1050d22034909bfca038ef1f8aaa2.jpg",
+    "description": "Very delecious",
+    "price": "900",
+    "id": "0.4791195971891722"
+  },
+  {
+    "title": "PineApple",
+    "imageUrl": "https://findfresh.in/attachments/shop_images/pineapple-500x500.webp",
+    "description": "Good taste!",
+    "price": "12",
+    "id": 6
+  },
+  {
+    "title": "Coconut",
+    "imageUrl": "https://www.newnessplant.com/uploads/e064544c4348b774aed8380abc06d459.jpg",
+    "description": "Good for health",
+    "price": "21",
+    "id": 7
+  }
+]

@@ -1,0 +1,84 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">MyAngularApp</a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <!-- Left-side Nav Links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a routerLink="/" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/ngrx" class="nav-link">NgRx Exp</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/counter" class="nav-link">Counter</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/emp" class="nav-link">Employee</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/signal" class="nav-link">Signal</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/rxjs" class="nav-link">Rxjs</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            ng Snippts
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+              <a class="dropdown-item" routerLink="/snippet">Auto Comlete</a>
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="/ngform">Angular Form</a>
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="/dataSharing"
+                >Data Transfer</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="/deBounce">de Bounce</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/ngCodingTest" class="nav-link"
+            >Machiene Test Coding</a
+          >
+        </li>
+      </ul>
+
+      <!-- Right-side User Info -->
+      <div class="d-flex align-items-center">
+        @let userName = userName$ | async; @if (userName) {
+        <span class="me-2">Welcome, <strong>AA- {{ userName }}</strong></span>
+        <button class="btn btn-outline-danger btn-sm">Logout</button>
+        } @else {
+        <span class="text-muted">Guest</span>
+        }
+      </div>
+    </div>
+  </div>
+</nav>

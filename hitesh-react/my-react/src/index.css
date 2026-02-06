@@ -1,0 +1,21 @@
+@import "tailwindcss";
+input {
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    width: 100%;
+}
+
+/* base styles */
+.my-box {
+  @apply bg-white text-black p-4 rounded-lg;
+}
+
+/* dark mode styles */
+.dark .my-box {
+  @apply bg-gray-800 text-white;
+}
+
+.dark .my-box {
+  @apply  text-white;
+}

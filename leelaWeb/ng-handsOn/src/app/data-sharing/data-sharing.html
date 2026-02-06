@@ -1,0 +1,12 @@
+<app-child-output [clickCount]="counter"></app-child-output> <br />
+<br />
+<app-child-action
+  (onIncriment)="incriment()"
+  (onDecriment)="decriment()"
+  (onReset)="reset()"
+></app-child-action>
+<br />
+<h3>Chnage Detection example:</h3>
+<em>Parent to child transfer - through OnPush Stratetgy</em>
+<app-onpush-stratetgy [user]="user"></app-onpush-stratetgy>
+<button (click)="mutateObj()">On Click Update Value to Child</button>

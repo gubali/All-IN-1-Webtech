@@ -1,0 +1,96 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <form #postForm="ngForm" (ngSubmit)="onCreatePost(postForm.value)">
+        <div class="form-group">
+          <label for="title">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            required
+            ngModel
+            name="name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="title">Salary</label>
+          <input
+            type="text"
+            class="form-control"
+            id="salary"
+            required
+            ngModel
+            name="salary"
+          />
+        </div>
+        <div class="form-group">
+          <label for="title">Age</label>
+          <input
+            type="text"
+            class="form-control"
+            id="age"
+            required
+            ngModel
+            name="age"
+          />
+        </div>
+        <br />
+        <button
+          class="btn btn-primary"
+          type="submit"
+          [disabled]="!postForm.valid"
+        >
+          Send Post
+        </button>
+      </form>
+    </div>
+  </div>
+  <hr />
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <button class="btn btn-primary" (click)="getAllComments()">
+        Fetch Posts
+      </button>
+      <button class="btn btn-danger">Clear Posts</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <!-- @if (getLoadData.length < 1) {
+      <p>No posts available!</p>
+      } -->
+      <!-- @if(getLoadData.length > 1){ -->
+      sss
+      <ul class="list-group">
+        @for (elem of getLoadData; track elem) {
+        <li class="list-group-item">
+          <p>{{ elem.id }}</p>
+          <p>{{ elem.postId }}</p>
+          <h3>{{ elem.name }}</h3>
+          <p>{{ elem.email }}</p>
+          <p>{{ elem.body }}</p>
+        </li>
+        }
+      </ul>
+      <!-- } -->
+      <br />
+    </div>
+    <!-- @if(isLoading) {
+    <div class="spinner-border text-danger" role="status">
+      <span class="sr-only"></span>
+    </div>
+    } -->
+  </div>
+  {{ getLoadData }}
+  <h3>
+    Pass data from exp-http componennt to chart.js using signal on button clcik
+  </h3>
+  <div style="border: 3px dotted rebeccapurple; padding: 15px">
+    <button (click)="pushDataToSignal()" class="btn btn-danger">
+      Push data to signal service
+    </button>
+  </div>
+  <!-- <app-chart-component [childMessage]="parentMessage"></app-chart-component> -->
+</div>

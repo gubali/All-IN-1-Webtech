@@ -1,0 +1,41 @@
+<div class="container">
+  <input
+    type="text"
+    class="form-control"
+    style="margin-bottom: 10px; max-width: 50%"
+    [(ngModel)]="searchText"
+    (ngModelChange)="fnSearchText()"
+  />
+  @if (filterData.length >0) {
+  <div class="row">
+    @for(items of filterData; track items.id){
+    <div class="col-md-6 col-sm-6 col-lg-4">
+      <div class="card product-card shadow-sm border-0">
+        <!-- Wrapper div for the image -->
+        <div class="card-img-top-wrapper">
+          <img
+            src="{{items.image}}"
+            class="card-img-top"
+            alt="{{items.title}}"
+          />
+        </div>
+        <div class="card-body product-card-body">
+          <h5 class="card-title">{{items.title}}</h5>
+          <p class="card-text">{{items.description}}</p>
+          <p class="product-price">
+            <strong>{{items.price}}</strong>
+          </p>
+          <p class="rating">
+            <span>⭐</span> {{items.rating.rate}} -
+            <small>{{items.rating.count}} reviews</small>
+          </p>
+          <a href="#" class="btn btn-primary buy-now-btn">Buy Now</a>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+  } @else {
+  <p>No records</p>
+  }
+</div>

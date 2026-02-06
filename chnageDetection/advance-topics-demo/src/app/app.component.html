@@ -1,0 +1,53 @@
+<a routerLink="/rxjs-exp">Rxjs Handon</a>
+<br />
+<app-change-detection-example></app-change-detection-example>
+
+<div *ngIf="listOfCourses$ | async as courses">
+  <div class="courses">
+    <ng-container
+      *ngFor="
+        let course of courses | filterByCatagory : 'ADVANCED';
+        let index = index;
+        let count = count;
+        let first = first;
+        let last = last;
+        let even = even;
+        let odd = odd
+      "
+    >
+      <h1>{{ count }}</h1>
+      <div class="row">
+        <div class="col-lg-4">
+          <app-course-card
+            [course]="course"
+            [cardIndex]="index"
+            [class.is-even]="first"
+            (selectedCourseById)="deletCourseById($event)"
+            (courseSelected)="onCourseSelected($event)"
+          >
+            <img src="{{ course.iconUrl }}" class="card-img-top" alt="..." />
+            <small>Level 1</small>
+          </app-course-card>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="courses.length === 0">
+      <h1>Record not found</h1>
+    </ng-container>
+  </div>
+</div>
+<button (click)="showCourseDetails()">ViewChild from parent</button>
+<h2>******Fetch data with service******</h2>
+
+<!-- <h3>========================Rxjs - Opeator=================</h3>
+<app-rxjs-demo></app-rxjs-demo> -->
+
+
+<h4 style="color: blue;">******************Example of chage detection and pass data parent to child*****************</h4>
+<app-child-chagedetections [childRcvr]="myItems"></app-child-chagedetections>
+<router-outlet></router-outlet>
+
+
+
+<h4>***************Parent data to child compoenent**************************</h4>
+<app-profile-card [ChildRcvrName]="praentNameVariable" [customRed]="colorRed"></app-profile-card>

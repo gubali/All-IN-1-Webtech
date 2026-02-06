@@ -1,0 +1,12 @@
+app-course-card.card-body.is-even{
+    background-color: lightblue;
+}/* You can add global styles to this file, and also import other style files */
+
+
+.isCardHighlighted {
+    background-color: lightblue;
+}
+
+.highLight{
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5);
+}

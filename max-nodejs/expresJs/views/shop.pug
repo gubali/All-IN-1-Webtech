@@ -1,0 +1,9 @@
+extends layout/master-layout.pug
+block content
+    main
+      if prods.length > 0
+             each product in prods
+              div
+               h1.main-header-text My product is #{product.title}
+      else
+           h1 no products
