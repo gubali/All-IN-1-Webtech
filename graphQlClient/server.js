@@ -16,7 +16,9 @@ async function fetchFakeServer() {
         });
 
         const data = await res.json();
-        console.log(data.data);
+        data.data.fruits.forEach(element => {
+            console.log(element);
+        });
     } catch (error) {
         console.error(error);
     }
