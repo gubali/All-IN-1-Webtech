@@ -1,0 +1,60 @@
+<div class="max-w-2xl mx-auto mt-10 p-6 bg-white shadow-lg rounded-2xl">
+  <!-- Title -->
+  <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Todo (Signals)</h2>
+
+  <!-- Input Section -->
+  <div class="flex gap-2 mb-6">
+    <input
+      type="text"
+      [value]="title()"
+      (input)="title.set($event.target.value)"
+      placeholder="Enter new task..."
+      class="flex-1 border border-gray-300 rounded-xl px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+
+    <button
+      (click)="addTodo()"
+      class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-xl transition"
+    >
+      Add
+    </button>
+  </div>
+
+  <!-- Task List -->
+  <div class="space-y-3">
+    @for (task of listOfTask(); track task) {
+      <div
+        class="flex items-center justify-between p-3 bg-gray-50 rounded-xl border hover:shadow-sm transition"
+      >
+        <!-- Left -->
+        <div class="flex items-center gap-3">
+          <span class="text-gray-500 font-medium"> {{ $index + 1 }}. </span>
+
+          <span class="text-gray-800">
+            {{ task.title }}
+          </span>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex gap-2">
+          <button
+            class="px-3 py-1 text-sm rounded-lg bg-yellow-100 text-yellow-700 hover:bg-yellow-200 transition"
+          >
+            Edit
+          </button>
+
+          <button
+            (click)="deleteTask(task.id)"
+            class="px-3 py-1 text-sm rounded-lg bg-red-100 text-red-700 hover:bg-red-200 transition"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    } @empty {
+      <div class="text-center text-gray-500 py-6">No tasks found</div>
+    }
+  </div>
+
+  <app-modern-communication [productsItems]="products()"></app-modern-communication>
+</div>
