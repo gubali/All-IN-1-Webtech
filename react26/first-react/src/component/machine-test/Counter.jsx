@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from "../../style/ui.module.css";
 import Button from '../shared/ui/Button';
 export default function Counter() {
@@ -14,6 +14,9 @@ export default function Counter() {
         setCount((prev) => Math.max(prev - 1, 0));
         setCountList((prev) => prev.slice(0, -1));
     };
+    useEffect(() => {
+        localStorage.setItem("count history", JSON.stringify(countList))
+    }, [countList])
     return (
         <>
             <div className={styles.page}>
