@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 export default React.memo(function ProductList({ search }) {
-  console.log("=====Product List when props change==============");
+  //console.log("=====Product List when props change==============");
   const products = ["Mobile", "Smart TV", "Laptop"];
   const filterItems = useMemo(() => {
     return products.filter((items) =>

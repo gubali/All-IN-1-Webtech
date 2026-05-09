@@ -31,6 +31,10 @@ import Counter from "./component/machine-test/Counter";
 import Debounce from "./component/machine-test/Debounce";
 import UserList from "./component/user/UserList";
 import UserProfile from "./component/user/UserProfile";
+import UseMemo from "./component/machine-test/UseMemo";
+import UseCallBack from "./component/machine-test/UseCallBack";
+import UseContext from "./component/machine-test/UseContext";
+import { useTheme } from "./reusable/theme-context/ThemeContext";
 const Page = styled.div`
   background: #f8fafc;
   padding: 28px;
@@ -99,7 +103,7 @@ const Select = styled.select`
 function App() {
   const [counter, setCounter] = useState(0);
   const [search, setSearch] = useState("");
-  const [user, setUser] = useState("My Tipu!");
+  const [user, setUser] = useState("ChocoPie");
 
   const usersList = [
     { id: 1, name: "Alice", age: 25, role: "Developer" },
@@ -120,7 +124,6 @@ function App() {
   const StyleUserCard = WithStyle(UserCard);
 
   useEffect(() => {
-    console.log("Search updated");
   }, [search]);
 
   // drop donw selction with useContext
@@ -129,9 +132,13 @@ function App() {
     const val = e.target.value;
     setSkill(val);
   };
+  // logic of only Get allusers from UseCallback.jsx not fully UI.
+  const [useUsers, setUseUsers] = useState([]);
 
+  const { theme, toggleTheme } = useTheme()
   return (
     <UserContext.Provider value={{ user, setUser }}>
+      <button onClick={toggleTheme}>{theme}</button>
       <Navbar />
       <Routes>
         <Route path="/" element={<Welcome />} />
@@ -144,8 +151,10 @@ function App() {
           <Route path="user" element={<UserList />} />
           <Route path="user-profile/:id/:name?" element={<UserProfile />} />
           <Route path="user/name?" element={<UserList />} />
+          <Route path="usememo" element={<UseMemo />} />
+          <Route path="usecall" element={<UseCallBack />} />
+          <Route path="usecontext" element={<UseContext />} />
         </Route>
-
         <Route path="/*" element={<h1>Page not found!</h1>} />
       </Routes>
       <br />
@@ -268,6 +277,17 @@ function App() {
             <ColorDdlList />
             <ToDo />
             <Toggle />
+          </Card>
+          <Card>
+            <Title>UseCallback.jsx call allUsers on App.jsx</Title><br />
+            <UseCallBack sendUser={setUseUsers} />
+            <small>im coming from child</small><br />
+
+            {
+              useUsers.map((u, i) => (
+                <p key={i}>{u}</p>
+              ))
+            }
           </Card>
         </Grid>
       </Page>

@@ -27,7 +27,7 @@ export default function MyControlled() {
   };
   // new input ref
   const getInput = () => {
-    console.log(inputRef);
+
   };
   const students = [
     {

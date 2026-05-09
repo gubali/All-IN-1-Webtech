@@ -4,11 +4,14 @@ import { BrowserRouter } from "react-router";
 import "./index.css";
 import App from "./App.jsx";
 import { SkillProvider } from "./context/SkillsContext.jsx";
+import { ThemeProvider } from "./reusable/theme-context/ThemeContext.jsx";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
       <SkillProvider>
-        <App />
+        <ThemeProvider>
+          <App />
+        </ThemeProvider>
       </SkillProvider>
     </BrowserRouter>
   </StrictMode>,

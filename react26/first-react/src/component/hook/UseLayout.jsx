@@ -4,11 +4,11 @@ import { useEffect } from "react";
 export default function UseLayout() {
   const ref = useRef(null);
   useEffect(() => {
-    console.log("first useEffet");
+    // console.log("first useEffet");
   }, []);
   useLayoutEffect(() => {
-    console.log("useLayoutEffect: Runs before DOM paint");
-    console.log(ref.current.innerHTML);
+    // console.log("useLayoutEffect: Runs before DOM paint");
+    // console.log(ref.current.innerHTML);
   }, []);
 
   return (

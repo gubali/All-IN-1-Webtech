@@ -44,3 +44,10 @@
   background: #2563eb;
   color: white;
 }
+
+.theme__nav-links a {
+  color: #fff;
+}
+.theme__navbar-container {
+  background-color: #333 !important;
+}

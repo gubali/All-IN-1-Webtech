@@ -1,16 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import "./Navbar.css";
+import { useTheme } from "../../reusable/theme-context/ThemeContext"
+import "./Navbar.css";
 
 export default function Navbar() {
+  const { theme } = useTheme();
+  const isDark = theme === 'dark';
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${isDark ? 'theme__navbar-container' : ""}`}>
       <div className="navbar-container">
-        {/* Logo */}
-        <div className="logo">MyApp</div>
-
-        {/* Links */}
-        <div className="nav-links">
+        <div className="logo" style={{ color: isDark ? "#fff" : "" }}>MyApp</div>
+        <div className={`nav-links ${isDark ? 'theme__nav-links ' : ""}`}>
           <Link to="/use-action-state">Action State</Link>
           <Link to="/hook">Hooks</Link>
           <Link to="/coding-test">Coding Test</Link>

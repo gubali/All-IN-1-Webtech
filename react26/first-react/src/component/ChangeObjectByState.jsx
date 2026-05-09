@@ -11,7 +11,7 @@ export default React.memo(function ChangeObjectByState() {
   const [skills, setSkills] = useState(["HTML", "Angular", "React"]);
   const setUserName = (e) => {
     const val = e.target.value;
-    console.log(val);
+
     setData((prev) => ({
       ...prev,
       name: val,
@@ -19,7 +19,7 @@ export default React.memo(function ChangeObjectByState() {
   };
   const setCityName = (e) => {
     const val = e.target.value;
-    console.log(val);
+
     setData((prev) => ({
       ...prev,
       address: {
@@ -27,7 +27,7 @@ export default React.memo(function ChangeObjectByState() {
         city: val,
       },
     }));
-    console.log(data);
+
   };
   const updateSkills = (e) => {
     const value = e.target.value;

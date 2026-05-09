@@ -16,8 +16,22 @@ export default function ChildNavBar() {
                     className={({ isActive }) => isActive ? "tab active" : 'tab'}>
                     Dynamic Routing
                 </NavLink>
+                <NavLink to="usememo"
+                    className={({ isActive }) => isActive ? "tab active" : 'tab'}>
+                    Use Memo
+                </NavLink>
+                <NavLink to="usecall"
+                    className={({ isActive }) => isActive ? "tab active" : 'tab'}>
+                    Use Callback
+                </NavLink>
+                <NavLink to="usecontext"
+                    className={({ isActive }) => isActive ? "tab active" : 'tab'}>
+                    Use Context
+                </NavLink>
             </div>
-            <Outlet />
+            <div className='container mx-auto px-4'>
+                <Outlet />
+            </div>
         </>
     )
 }

@@ -15,7 +15,7 @@ export default function Debounce() {
     }, [search]);
     useEffect(() => {
         if (debouceVal) {
-            console.log("Api call with: ", debouceVal);
+            // console.log("Api call with: ", debouceVal);
         }
     }, [debouceVal]);
     return (

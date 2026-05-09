@@ -1,5 +1,38 @@
 @import "tailwindcss";
+/* LIGHT THEME */
+[data-theme="light"] {
+  --bg: #ffffff;
+  --text: #111827;
+  --navbar-bg: #f3f4f6;
 
+  --button-bg: #111827;
+  --button-text: #ffffff;
+}
+
+/* DARK THEME */
+[data-theme="dark"] {
+  --bg: #111827;
+  --text: purple;
+  --navbar-bg: #1f2937;
+
+  --button-bg: #f9fafb;
+  --button-text: #111827;
+}
+
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
 .navbar {
   width: 100%;
   background: #ffffff;

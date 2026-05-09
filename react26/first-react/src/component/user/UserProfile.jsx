@@ -3,7 +3,7 @@ import { useParams } from 'react-router'
 
 export default function UserProfile() {
     const pramsData = useParams();
-    console.log(pramsData);
+    //console.log(pramsData);
     return (
         <div>UserProfile
             Selected id is: {pramsData?.id}

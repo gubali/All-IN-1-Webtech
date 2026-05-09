@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-
+import Cards from "../../reusable/Cards";
 export default function UserList() {
     const [userList, setUserList] = useState([]);
     const [loader, setLoader] = useState(false);
@@ -21,6 +21,7 @@ export default function UserList() {
     };
 
     useEffect(() => {
+        // console.log("User list.....");
         getUserData();
     }, []);
 
@@ -37,26 +38,7 @@ export default function UserList() {
                     </div>
                 ) : (
                     <div className="space-y-3">
-                        {userList.map((item) => (
-                            <NavLink
-                                key={item.id}
-                                to={`/coding-test/user-profile/${item.id}/${item.name}`}
-                                className="block p-4 bg-white rounded-xl shadow hover:shadow-lg transition duration-300 border border-gray-100"
-                            >
-                                <div className="flex justify-between items-center">
-                                    <div>
-                                        <h2 className="text-lg font-semibold text-gray-800">
-                                            {item.name}
-                                        </h2>
-                                        <p className="text-sm text-gray-500">{item.email}</p>
-                                    </div>
-
-                                    <span className="text-blue-500 font-medium text-sm">
-                                        View →
-                                    </span>
-                                </div>
-                            </NavLink>
-                        ))}
+                        <Cards userList={userList} />
                     </div>
                 )}
             </div>
