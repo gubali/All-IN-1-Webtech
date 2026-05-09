@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link, Outlet, NavLink } from 'react-router';
+import { useTheme } from '../../reusable/theme-context/ThemeContext';
 export default function ChildNavBar() {
+    const { theme } = useTheme();
+    const isDark = theme === 'dark';
     return (
         <>
-            <div className="tabs">
+            <div className={`tabs ${isDark ? 'theme__tab-color' : undefined}`} >
                 <NavLink to="counter"
                     className={({ isActive }) => isActive ? "tab active" : 'tab'}>
                     Counter
@@ -27,6 +30,14 @@ export default function ChildNavBar() {
                 <NavLink to="usecontext"
                     className={({ isActive }) => isActive ? "tab active" : 'tab'}>
                     Use Context
+                </NavLink>
+                <NavLink to="todo"
+                    className={({ isActive }) => isActive ? "tab active" : 'tab'}>
+                    ToDo <small>useState/useReducer</small>
+                </NavLink>
+                <NavLink to="useref"
+                    className={({ isActive }) => isActive ? "tab active" : 'tab'}>
+                    UseRef
                 </NavLink>
             </div>
             <div className='container mx-auto px-4'>

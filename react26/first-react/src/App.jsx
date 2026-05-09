@@ -35,6 +35,8 @@ import UseMemo from "./component/machine-test/UseMemo";
 import UseCallBack from "./component/machine-test/UseCallBack";
 import UseContext from "./component/machine-test/UseContext";
 import { useTheme } from "./reusable/theme-context/ThemeContext";
+import ToDoApp from "./component/machine-test/ToDoApp"
+import UseRef from "./component/machine-test/UseRef";
 const Page = styled.div`
   background: #f8fafc;
   padding: 28px;
@@ -154,6 +156,8 @@ function App() {
           <Route path="usememo" element={<UseMemo />} />
           <Route path="usecall" element={<UseCallBack />} />
           <Route path="usecontext" element={<UseContext />} />
+          <Route path="todo" element={<ToDoApp />} />
+          <Route path="useref" element={<UseRef />} />
         </Route>
         <Route path="/*" element={<h1>Page not found!</h1>} />
       </Routes>
