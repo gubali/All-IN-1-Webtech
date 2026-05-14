@@ -14,7 +14,7 @@ export default function UseFormSubmission() {
 
   const handleTextChange = (e) => {
     const value = e.target.value;
-    console.log(value);
+
     setText(value);
     startTransition(() => {
       /*eslint no-undef: "error"*/

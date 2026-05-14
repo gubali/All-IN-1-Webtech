@@ -14,6 +14,7 @@ export default function Navbar() {
           <Link to="/use-action-state">Action State</Link>
           <Link to="/hook">Hooks</Link>
           <Link to="/coding-test">Coding Test</Link>
+          <Link to="/fetchpost">Data Fetching</Link>
         </div>
       </div>
     </nav>

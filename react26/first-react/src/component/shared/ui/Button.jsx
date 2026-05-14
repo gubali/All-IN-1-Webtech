@@ -1,9 +1,10 @@
 import React from 'react'
 
-export default function Button({ label, onClick, className, children }) {
+export default function Button({ ...props }) {
     return (
         <>
-            <button onClick={onClick} className={className}>{children ?? label}</button>
+            <button {...props}></button>
+            {/* <button onClick={onClick} type={type} className={className} name={name}>{children ?? label}</button> */}
         </>
     )
 }

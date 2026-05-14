@@ -1,4 +1,22 @@
 @import "tailwindcss";
+/* custom tailwind css */
+@theme {
+  --color-dark-yellow: yellow;
+}
+@utility my-style {
+  background-color: #3b82f6;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+.btn {
+  @apply bg-blue-500 text-white px-4 py-2 rounded;
+}
+@layer components {
+  .button {
+    @apply p-5 px-4 py-2 rounded-full border border-purple-200 bg-sky-400 hover:border-transparent hover:bg-purple-600 hover:text-white active:bg-purple-700 transition;
+  }
+}
 /* LIGHT THEME */
 [data-theme="light"] {
   --bg: #ffffff;

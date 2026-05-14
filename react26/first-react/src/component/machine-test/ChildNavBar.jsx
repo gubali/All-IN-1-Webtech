@@ -39,6 +39,18 @@ export default function ChildNavBar() {
                     className={({ isActive }) => isActive ? "tab active" : 'tab'}>
                     UseRef
                 </NavLink>
+                <NavLink to="usetransition"
+                    className={({ isActive }) => isActive ? "tab active" : 'tab'}>
+                    Use Transition
+                </NavLink>
+                <NavLink to="uselayout"
+                    className={({ isActive }) => isActive ? "tab active" : 'tab'}>
+                    Use Layout Effect
+                </NavLink>
+                <NavLink to="actionstate"
+                    className={({ isActive }) => isActive ? "tab active" : 'tab'}>
+                    Use Action State
+                </NavLink>
             </div>
             <div className='container mx-auto px-4'>
                 <Outlet />
