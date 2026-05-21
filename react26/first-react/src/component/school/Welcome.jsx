@@ -40,30 +40,31 @@ const SectionTitle = styled.h3`
 
 export default function Welcome() {
   return (
-    <Container>
+    <Container id={'main-content'} area-label={'School dashboard main content'}>
       <Header>
         <Title>
+          First Testing
           School Dashboard -
           <span style={{ color: "red" }}>
             UseContext page selected value to faculty Compnent
           </span>
         </Title>
       </Header>
-
-      <Section>
-        <SectionTitle>Students</SectionTitle>
+      {/* 
+      <Section aria-labelledby={'students-title'}>
+        <SectionTitle id={'students-title'}>Students</SectionTitle>
         <StudentInfo />
       </Section>
 
-      <Section>
-        <SectionTitle>Subjects</SectionTitle>
+      <Section aria-labelledby={'subjects-title'}>
+        <SectionTitle id={'subjects-title'}>Subjects</SectionTitle>
         <SubjectInfo />
       </Section>
 
-      <Section>
-        <SectionTitle>Faculty</SectionTitle>
+      <Section aria-labelledby={'faculty-title'}>
+        <SectionTitle id={'faculty-title'}>Faculty</SectionTitle>
         <Faculty />
-      </Section>
+      </Section> */}
     </Container>
   );
 }

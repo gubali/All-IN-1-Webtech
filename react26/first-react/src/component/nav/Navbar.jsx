@@ -6,6 +6,7 @@ import "./Navbar.css";
 export default function Navbar() {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
+
   return (
     <nav className={`navbar ${isDark ? 'theme__navbar-container' : ""}`}>
       <div className="navbar-container">
@@ -15,6 +16,7 @@ export default function Navbar() {
           <Link to="/hook">Hooks</Link>
           <Link to="/coding-test">Coding Test</Link>
           <Link to="/fetchpost">Data Fetching</Link>
+          <Link to="/vscroll">Virtual Scroll</Link>
         </div>
       </div>
     </nav>

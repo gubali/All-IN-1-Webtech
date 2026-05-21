@@ -10,9 +10,7 @@ export default function UserPostList() {
     const [message, setMessage] = useState();
     // const [page, setPage] = useState(0);
     // Tanstack query
-    const { data, isFetching, isError
-
-    } = usePosts();
+    const { data, isFetching, isError } = usePosts();
     const { mutate, isPending } = useCreatePost();
     const [form, setForm] = useState({
         userId: "",

@@ -18,7 +18,7 @@ export default function ReusableTableData({ user }) {
               <td>{items.id}</td>
               <td>{items.name}</td>
               <td>{items.age}</td>
-              <td>{items.role}</td>
+              <td style={{ color: items.role == 'Developer' ? 'red' : '' }}>{items.role}</td>
             </tr>
           ))}
         </tbody>

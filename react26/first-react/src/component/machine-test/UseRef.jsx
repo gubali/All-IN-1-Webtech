@@ -20,7 +20,9 @@ export default function UseRef() {
     const handleFocus = () => {
         inputRef.current.focus();
     }
-
+    // useEffect(() => {
+    //     inputRef.current.focus()
+    // }, [])
     return (
         <>
             <Quotes heading={`${heading1}`} para={`${desc1}`} />
