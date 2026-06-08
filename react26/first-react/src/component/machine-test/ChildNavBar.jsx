@@ -51,6 +51,10 @@ export default function ChildNavBar() {
                     className={({ isActive }) => isActive ? "tab active" : 'tab'}>
                     Use Action State
                 </NavLink>
+                <NavLink to="progresbar"
+                    className={({ isActive }) => isActive ? "tab active" : 'tab'}>
+                    Progress Bar
+                </NavLink>
             </div>
             <div className='container mx-auto px-4'>
                 <Outlet />

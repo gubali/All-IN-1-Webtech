@@ -117,6 +117,9 @@ body {
 .theme__tab-color .tab {
   color: #fff !important;
 }
+.tabs.theme__tab-color .tab.active {
+  color: yellowgreen !important;
+}
 /* underline (hidden by default) */
 .tab::after {
   content: "";

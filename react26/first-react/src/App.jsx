@@ -99,7 +99,9 @@ const UseLayOutEffect = lazy(() =>
 const UseActionState = lazy(() =>
   import("./component/machine-test/UseActionState")
 );
-
+const UseProgress = lazy(() =>
+  import("./component/ProgressBar")
+);
 const UserPostList = lazy(() =>
   import("./component/data-fetching/UserPostList")
 );
@@ -202,7 +204,8 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts'
-const data = [
+import ProgressBar from "./component/ProgressBar";
+const data1 = [
   { id: 1, name: "paul", age: 30 },
   { id: 2, name: "john", age: 40 },
   { id: 3, name: "adam", age: 50 },
@@ -259,6 +262,7 @@ function App() {
       <p style={customStyle}>IM HOC-</p>
       {/* end */}
       <Navbar />
+      {/* 
       {/* ROUTE SPLITTING */}
       <Suspense fallback={<Loader />}>
         <Routes>
@@ -329,6 +333,10 @@ function App() {
               path="actionstate"
               element={<UseActionState />}
             />
+            <Route
+              path="progresbar"
+              element={<UseProgress />}
+            />
           </Route>
 
           <Route
@@ -355,7 +363,7 @@ function App() {
           {/* chart */}
           <div style={{ width: "100%", height: 300 }}>
             <ResponsiveContainer>
-              <LineChart data={data}>
+              <LineChart data={data1}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="name" />
                 <YAxis />
@@ -373,7 +381,7 @@ function App() {
             </ResponsiveContainer>
           </div>
           {/* end */}
-          {/* <Crash /> */}
+          <Crash />
 
           {/* end */}
           <Grid>
