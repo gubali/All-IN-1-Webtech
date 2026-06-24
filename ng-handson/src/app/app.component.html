@@ -3,18 +3,21 @@
 <!-- <app-nested-circle-screen></app-nested-circle-screen> -->
 <div class="container">
   <router-outlet></router-outlet>
-  <h3>==========$$ignal Example$$==============</h3>
-  @if(isActive) {
-  {{ title() }}
+  <h3>==========$$ignal Example$$##==============</h3>
+  <div style="border: 1px solid red">
+    <strong>Observable</strong>
+  </div>
+  @if (isActive) {
+    {{ title() }}
   }
   <button (click)="btnClick()">Click</button>
   <ul>
     @for (ingredient of ingredientList; track ingredient.name) {
-    <li>{{ ingredient.quantity }} - {{ ingredient.name }}</li>
+      <li>{{ ingredient.quantity }} - {{ ingredient.name }}</li>
     }
   </ul>
   @if (apiHeaderFlag) {
-  <h2>API call</h2>
+    <h2>API call</h2>
   }
   <button class="btn btn-primary" (click)="onClick()">Show Api Header</button>
   <br />
@@ -38,4 +41,6 @@
   <app-textbox-calculation></app-textbox-calculation>
   <h3>=====================Chart configuration======================</h3>
   <app-chart-component></app-chart-component>
+  <br />
+  <h1>Promise and Observable</h1>
 </div>
