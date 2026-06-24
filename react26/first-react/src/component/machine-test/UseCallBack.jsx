@@ -13,7 +13,6 @@ export default function UseCallBack() {
         'james']
     const [users, setUsers] = useState(allUsers);
     const handleSearchQuery = useCallback((value) => {
-        console.log(users[0]);
         const filterUser = allUsers.filter((user) => user.toLowerCase().includes(value.toLowerCase()))
         setUsers(filterUser);
         setSearch(value)

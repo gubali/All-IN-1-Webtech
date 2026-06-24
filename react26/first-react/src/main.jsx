@@ -7,6 +7,7 @@ import { SkillProvider } from "./context/SkillsContext.jsx";
 import { ThemeProvider } from "./reusable/theme-context/ThemeContext.jsx";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { reportWebVitals } from "./webVitals.js";
 const queryClient = new QueryClient();
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -22,3 +23,4 @@ createRoot(document.getElementById("root")).render(
     </BrowserRouter>
   </StrictMode>,
 );
+reportWebVitals();
