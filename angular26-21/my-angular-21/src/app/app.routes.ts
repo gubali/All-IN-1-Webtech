@@ -1,10 +1,9 @@
 import { Routes } from '@angular/router';
-import { TodoSignal } from './todo-signal/todo-signal';
 
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'todo',
+    redirectTo: 'welcome',
     pathMatch: 'full',
   },
   {
@@ -20,7 +19,11 @@ export const routes: Routes = [
     loadComponent: () => import('./rxjs-operators/rxjs-operators').then((m) => m.RxjsOperators),
   },
   {
+    path: 'change-detection',
+    loadComponent: () => import('./change-detect/change-detect').then((m) => m.ChangeDetect),
+  },
+  {
     path: '**',
-    redirectTo: 'todo',
+    redirectTo: 'welcome',
   },
 ];
