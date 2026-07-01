@@ -55,6 +55,10 @@ export default function ChildNavBar() {
                     className={({ isActive }) => isActive ? "tab active" : 'tab'}>
                     Progress Bar
                 </NavLink>
+                <NavLink to="handleHttpError"
+                    className={({ isActive }) => isActive ? "tab active" : 'tab'}>
+                    Global Http Error
+                </NavLink>
             </div>
             <div className='container mx-auto px-4'>
                 <Outlet />

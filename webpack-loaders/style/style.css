@@ -236,8 +236,7 @@ body::after {
   font-size: 0.95rem;
   font-weight: 500;
   box-shadow: var(--shadow-lg);
-
-  opacity: 0;
+  /* opacity: 0; */
   pointer-events: none;
   transform: translateY(-25px) scale(0.95);
   transition: all 0.45s ease;
@@ -269,4 +268,8 @@ body::after {
     width: auto;
     text-align: center;
   }
+}
+
+.unused-css {
+  border: 1px solid red;
 }

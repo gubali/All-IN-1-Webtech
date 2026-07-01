@@ -70,7 +70,7 @@ export default function ToDoApp() {
                     </div>
                 </div>
                 {/* use Reducer */}
-                <div className={styles.card}>
+                <div className={styles.card} style={{ display: 'none' }}>
                     <h1 className={styles.title} style={{ textAlign: "center" }}>
                         Todo App - (useReducer)
                     </h1>
@@ -117,6 +117,15 @@ export default function ToDoApp() {
                         </ul>
                     </div>
                 </div>
+                {/* ToDo App Create Delete. update */}
+                <br />
+                <div>
+                    <h1 className={styles.title} style={{ textAlign: "center", width: "100%" }}>
+                        Todo App - Pending
+                    </h1>
+                </div>
+
+                {/* end */}
             </div>
         </>
     )

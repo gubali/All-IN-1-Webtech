@@ -107,6 +107,7 @@ const UserPostList = lazy(() =>
 );
 const VScroll = lazy(() =>
   import("./component/VitualsScroll"));
+const HttpGlobalError = lazy(() => import("./component/machine-test/HandleApiErrorGlobally"))
 import Crash from "./component/Crash";
 // const a = lazy(()=> import ("file_name"));
 // HOC -style
@@ -337,6 +338,7 @@ function App() {
               path="progresbar"
               element={<UseProgress />}
             />
+            <Route path="handleHttpError" element={<HttpGlobalError />} />
           </Route>
 
           <Route

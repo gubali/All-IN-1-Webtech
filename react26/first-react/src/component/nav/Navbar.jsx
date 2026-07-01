@@ -17,6 +17,7 @@ export default function Navbar() {
           <Link to="/coding-test">Coding Test</Link>
           <Link to="/fetchpost">Data Fetching</Link>
           <Link to="/vscroll">Virtual Scroll</Link>
+
         </div>
       </div>
     </nav>

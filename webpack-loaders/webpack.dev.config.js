@@ -3,14 +3,30 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer")
 module.exports = {
-    mode: "production",
+    mode: "development",
     //entry: "./index.js",
+    devServer: {
+        port: 3000,
+        static: {
+            directory: path.join(__dirname, "dist"),
+        },
+        hot: true,
+        liveReload: true,
+        watchFiles: [
+            "./index.html",
+            "./about.html",
+            "./**/*.js",
+            "./**/*.scss",
+            "./**/*.css"
+        ]
+    },
     entry: {
         index: "./index.js",
         explore: "./about.js"
     },
-    devtool: false,
+    devtool: "eval",
     output: {
         filename: "[name].bundle.js",
         //filename: "[name].bundle.js",
@@ -18,7 +34,13 @@ module.exports = {
         assetModuleFilename: "assets/[hash][ext]",
         clean: true
     },
+    optimization: {
+        splitChunks: {
+            chunks: "all"
+        }
+    },
     plugins: [
+        new BundleAnalyzerPlugin(),
         new MiniCssExtractPlugin({
             filename: "[name].[contenthash].css"
         }),
